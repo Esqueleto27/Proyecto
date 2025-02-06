@@ -1,14 +1,32 @@
-# Proyecto calculadora 
+import operaciones
+# calculadora.py
 
-#Creamos un modulo de operaciones 
-def suma(a,b):
-    return a + b
+def mostrar_menu():
+    print("\nCalculadora")
+    print("1. Suma")
+    print("2. Resta")
+    print("3. Multiplicación")
+    print("4. División")
+    print("5. Salir")
 
-def resta(a,b):
-    return a - b
+while True:
+    mostrar_menu()
+    opcion = input("Elige una opción: ")
 
-def multiplicacion(a,b):
-    return a * b
+    if opcion == "5":
+        print("Saliendo...")
+        break
 
-def division(a,b):
-    return a / b
+    num1 = float(input("Ingresa el primer número: "))
+    num2 = float(input("Ingresa el segundo número: "))
+
+    if opcion == "1":
+        print(f"Resultado: {operaciones.suma(num1, num2)}")
+    elif opcion == "2":
+        print(f"Resultado: {operaciones.resta(num1, num2)}")
+    elif opcion == "3":
+        print(f"Resultado: {operaciones.multiplicacion(num1, num2)}")
+    elif opcion == "4":
+        print(f"Resultado: {operaciones.division(num1, num2)}")
+    else:
+        print("Opción no válida. Intenta de nuevo.")
